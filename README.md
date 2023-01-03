@@ -8,16 +8,37 @@ This is already configured in this project but these were the steps take to crea
 
 ### Step 1: Create file
 
+Creating a "StoreKit Configuration File" will prompt you with a checkbox for "Sync this file with an app in App Store Connect". This is new in Xcode 14 but was not enabled for _this_ project. This project is meant to run without needing to do anything on App Store Connect.
+
+Syncing with App Store Connect is a great feature if/once you already have products configured and you don't want to manage your live products (in App Store Connect) and test products (in a StoreKit Configuration File) separately.
+
 ![Screen Shot 2023-01-03 at 5 47 23 AM](https://user-images.githubusercontent.com/401294/210351433-ec9ea8c5-7f2f-478c-b352-6d3ea11ff04d.png)
 
 ### Step 2: Add products
+
+The StoreKit Configuration File allows you to create any number of:
+- Consumable in-app purchases
+- Non-consumable in-app purchases
+- Non-renewing subscriptions
+- Auto-renewable subscriptions
+
+This project only added an lifetime non-consumable and two auto-renewable subscriptions.
 
 ![Screen Shot 2023-01-03 at 5 39 06 AM](https://user-images.githubusercontent.com/401294/210350236-2691af88-dd44-4404-bcfe-d27abaf2bc7d.png)
 
 ### Step 3: Enable in scheme
 
+The Xcode scheme needs to be configured to load products from the StoreKit Configuration File. This can be done by selecting your file in the `Run > StoreKit Configuration`.
+
 ![Screen Shot 2023-01-03 at 5 45 23 AM](https://user-images.githubusercontent.com/401294/210351363-6f273050-f078-4615-aa2d-f08d63a0b780.png)
 
+### Step 4: Running and debugging
+
+Now the app is ready to load products and make test purchases using the StoreKit Configuration File and Xcode.
+
+`Debug > StoreKit > Manage Transactions`
+
+![Screen Shot 2023-01-03 at 5 58 35 AM](https://user-images.githubusercontent.com/401294/210352972-a9969d68-ed54-4c81-b744-f9b498c56b64.png)
 
 ## Demo
 
